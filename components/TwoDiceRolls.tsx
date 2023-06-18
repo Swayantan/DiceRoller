@@ -34,7 +34,7 @@ type DiceProps = PropsWithChildren<{
 
 const options = {
   enableVibrateFallback: true,
-  ignoreAndroidSystemSettings: false,
+  ignoreAndroidSystemSettings: true,
 };
 
 const Dice = ({imageUrl}: DiceProps): JSX.Element => {
@@ -80,7 +80,7 @@ export default function App(): JSX.Element {
         dice = DiceOne;
         break;
     }
-    ReactNativeHapticFeedback.trigger('impactLight', options);
+    ReactNativeHapticFeedback.trigger('impactHeavy', options);
     return dice;
   };
 
